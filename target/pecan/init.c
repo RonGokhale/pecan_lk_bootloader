@@ -57,38 +57,58 @@ static struct ptable flash_ptable;
 static struct ptentry board_part_list[] = {
 	{
 		.start = 0,
-		.length = 5 /* In MB */,
+		.length = 40 
 		.name = "boot",
 	},
 	{
-		.start = DIFF_START_ADDR,
-		.length = 105 /* In MB */,
-		.name = "system",
-	},
-	{
-		.start = DIFF_START_ADDR,
-		.length = 4 /* In MB */,
+		.start = 56,
+		.length = 512 
 		.name = "cache",
 	},
 	{
-		.start = DIFF_START_ADDR,
-		.length = 4 /* In MB */,
-		.name = "misc",
+		.start = 568,
+		.length = 40 
+		.name = "recovery",
 	},
 	{
-		.start = DIFF_START_ADDR,
-		.length = VARIABLE_LENGTH,
+		.start = 608,
+		.length = 3 ,
+		.name = "splash",
+	},
+	{
+		.start = 611,
+		.length = 1560
+		.name = "system",
+	},
+	{
+		.start = 1891,
+		.length = 22 
+		.name = "lgdrm",
+	},
+	{
+		.start = 1913,
+		.length = 1788 
 		.name = "userdata",
 	},
 	{
-		.start = DIFF_START_ADDR,
-		.length = 2 /* In MB */,
-		.name = "persist",
+		.start = 3701,
+		.length = 8 ,
+		.name = "misc",
 	},
 	{
-		.start = DIFF_START_ADDR,
-		.length = 5 /* In MB */,
-		.name = "recovery",
+		.start = -109,
+		.length = 4 
+		.name = "usd",
+	},
+	{
+		.start = -105,
+		.length = 45 
+		.name = "pkg",
+	},
+	{
+		.start = 0,
+		.length = 0,
+		.name = "",
 	},
 };
 static int num_parts = sizeof(board_part_list)/sizeof(struct ptentry);
